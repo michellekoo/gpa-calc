@@ -23,6 +23,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<script type="text/javascript">
+			var count = 4;
 
 			function addClass(tableID) {
 				var table = document.getElementById(tableID);
@@ -31,18 +32,19 @@
 				var cell1 = row.insertCell(0);
 				var element1 = document.createElement("input");
 				element1.type = "text";
-				element1.name = "class";
+				element1.name = "class" + count;
 				cell1.appendChild(element1);
 				var cell2 = row.insertCell(1);
 				var element2 = document.createElement("input");
 				element2.type = "text";
-				element2.name = "unit";
+				element2.name = "unit" + count;
 				cell2.appendChild(element2);
 				var cell3 = row.insertCell(2);
 				var element3 = document.createElement("input");
 				element3.type = "text";
-				element3.name = "grade";
+				element3.name = "grade" + count;
 				cell3.appendChild(element3);
+				count += 1;
 			}
 
 			function matchGrade(grd) {
@@ -76,6 +78,7 @@
 			}
 
 			function calc() {
+				table = document.getElementById('addClass');
 
 			}
 			
@@ -221,19 +224,19 @@
 							    <th>Grade</th>
 							  </tr>
 							  <tr>
-							    <td><input id="class" type="text" /></td>
-							    <td><input id="unit" type="text" /></td>		
-							    <td><input id="grade" type="text" /></td>
+							    <td><input id="class1" type="text" /></td>
+							    <td><input id="unit1" type="text" /></td>		
+							    <td><input id="grade1" type="text" /></td>
 							  </tr>
 							  <tr>
-							    <td><input id="class" type="text" /></td>
-							    <td><input id="unit" type="text" /></td>		
-							    <td><input id="grade" type="text" /></td>
+							    <td><input id="class2" type="text" /></td>
+							    <td><input id="unit2" type="text" /></td>		
+							    <td><input id="grade2" type="text" /></td>
 							  </tr>
 							  <tr>
-							    <td><input id="class" type="text" /></td>
-							    <td><input id="unit" type="text" /></td>		
-							    <td><input id="grade" type="text" /></td>
+							    <td><input id="class3" type="text" /></td>
+							    <td><input id="unit3" type="text" /></td>		
+							    <td><input id="grade3" type="text" /></td>
 							  </tr>
 							</table>
 							<a onclick="addClass('gradeTable')"> Add Another Class </a>
