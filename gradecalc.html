@@ -32,16 +32,19 @@
 				var cell1 = row.insertCell(0);
 				var element1 = document.createElement("input");
 				element1.type = "text";
+				element1.id = "class" + count;
 				element1.name = "class" + count;
 				cell1.appendChild(element1);
 				var cell2 = row.insertCell(1);
 				var element2 = document.createElement("input");
 				element2.type = "text";
+				element2.id = "unit" + count;
 				element2.name = "unit" + count;
 				cell2.appendChild(element2);
 				var cell3 = row.insertCell(2);
 				var element3 = document.createElement("input");
 				element3.type = "text";
+				element3.id = "grade" + count;
 				element3.name = "grade" + count;
 				cell3.appendChild(element3);
 				count += 1;
@@ -95,8 +98,6 @@
 					// gradearr.push(document.getElementById("grade" + i));
 					i += 1;
 				}
-				alert("UNIT TOTAL" + unitTotal);
-				alert("TOTAL" + total);
 				alert("Your overall GPA is: " + total / unitTotal);
 			}
 			
