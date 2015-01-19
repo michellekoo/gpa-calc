@@ -78,8 +78,26 @@
 			}
 
 			function calc() {
-				table = document.getElementById('addClass');
-
+				var i = 1;
+				var unitTotal, total;
+				unitTotal = 0;
+				total = 0;
+				while (i < count) {
+					//var classunit + j = Number(document.getElementById("unit" + i));
+					var classunit = document.getElementById("unit" + i).value;
+					var classgrade = document.getElementById("grade" + i).value;
+					if (classgrade != "" && classunit != "") {
+						var grdclass = matchGrade(classgrade);
+						unitTotal += classunit * 1;
+						total += classunit * grdclass;
+					}
+					// unitarr.push(Number(document.getElementById("unit" + i)));
+					// gradearr.push(document.getElementById("grade" + i));
+					i += 1;
+				}
+				alert("UNIT TOTAL" + unitTotal);
+				alert("TOTAL" + total);
+				alert("Your overall GPA is: " + total / unitTotal);
 			}
 			
 			
@@ -243,7 +261,7 @@
 							<br>
 							<br>
 							<input type="button" value="Calculate" onclick="calc()"/>
-							<h5>Converting to Binary</h5>
+							<!-- <h5>Converting to Binary</h5>
 							<p>Enter a positive base 10 number to convert to binary.</p>
 							<input id="bin" type="text" />
 							</br>
@@ -259,7 +277,7 @@
 							</br>
 							</br>
 
-							<input type="button" value="Convert" onclick="decConvert()"/>
+							<input type="button" value="Convert" onclick="decConvert()"/> -->
 
 						</div>
 					</section>
